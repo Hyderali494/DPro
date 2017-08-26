@@ -1,0 +1,23 @@
+<html>
+<head>
+{% load staticfiles %}
+<title>Telephone Directory</title>
+</head>
+
+
+<body style = 'background-color:skyblue'>
+{% csrf_token%}
+<form action = "/TD/getLogin/" method = 'post'>
+Username : <input type = "text" name = 'name'></br>
+Password : <input type = "password" name = "pwd"></br>
+           <input type = "submit" value = "Submit"/>
+</form>
+<form action="/TD/showRegister/"> 
+ <input type = "submit" value ="Register"/>
+</form>
+
+</body>
+
+
+</html>
+
