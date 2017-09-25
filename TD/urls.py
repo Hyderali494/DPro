@@ -8,4 +8,7 @@ url(r'^getLogin/$',views.getLogin,name='getLogin'),
 url(r'^showRegister/$',views.showRegister,name='showRegister'),
 url(r'^getRegister/$',views.getRegister,name='getRegister'),
 url(r'^jsonview/$',views.jsonview,name = 'jsonview'),
+url(r'^showContact/$',views.showContact,name='showContact'),
+url(r'^getContact/$',views.getContact,name='getContact'),
+url(r'^dispContacts/$',views.dispContacts,name='dispContacts'),
 ]

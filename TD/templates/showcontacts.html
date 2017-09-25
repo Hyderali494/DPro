@@ -1,0 +1,40 @@
+<html>
+<head>
+{% load staticfiles %}
+<link  rel = "stylesheet" href = "{% static 'css/bootstrap.min.css' %}" type = 'text/css'/>
+<link rel = "stylesheet" href = "https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
+<script>
+<script>
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+</head>
+<body>
+
+<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+   <tr>
+       <th>Username</th>
+       <th>Nickname</th> 
+       <th>Phone No</th>
+       <th>Email</th>
+       <th>Company</th>
+   </tr>
+    {% for i in data %}
+
+   <tr>
+       <td>{{i.Username}}</td>
+       <td>{{i.Nickname}}</td>
+       <td>{{i.Phone_no}}</td>
+       <td>{{i.Email}}</td>
+       <td>{{i.Company}}</td>
+   </tr>
+ {% endfor %}
+
+
+</table>
+</body>
+
+</html>	
