@@ -69,3 +69,49 @@ def jsonview(request):
 def dispContacts(request):
     data = Contact.objects.all()
     return render(request,'showcontacts.html',{'data' : data}) 
+def showUpdate(request):
+    if request.GET['name']:
+        data = Contact.objects.filter(Username = request.GET['name'])
+    else:
+        pass
+    return render(request,'update.html',{'data':data})
+@csrf_exempt
+def getUpdate(request):
+    name = request.POST['name'];
+    nname = request.POST['nname'];
+    phone_no = int(request.POST['phone_no']);
+    email = request.POST['email'];
+    company = request.POST['cmp'];
+    if name and phone_no:
+        cont = Contact.objects.filter(Username = name);
+        if cont:
+            cont.update(Nickname = nname,Phone_no = phone_no,Email = email,Company = company)
+            data = "Updated Sucessfully"
+            return HttpResponse(data);
+    else:
+        data = "Please fill atleast Username and Phone Number Fields";
+        return HttpResponse(data);
+
+def showDelete(request):
+    if request.GET['name']:
+        data = Contact.objects.filter(Username = request.GET['name'])
+    else:
+        pass
+    return render(request,'delete.html',{'data':data})
+   
+@csrf_exempt
+def getDelete(request):
+    name = request.POST['name']
+    if name:
+        cont = Contact.objects.filter(Username = name)
+        if cont:
+            cont.delete()
+            data = "Deleted Sucessfully"
+            return HttpResponse(data)
+    else:
+        return HttpResponse("Please mention Username to delete")
+def showUp(request):
+    return render_to_response('update.html')
+
+def getFixed(request):
+    return render_to_response('baselogout.html')

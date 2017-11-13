@@ -21,6 +21,8 @@ $(document).ready(function() {
        <th>Phone No</th>
        <th>Email</th>
        <th>Company</th>
+       <th>Edits</th>
+       <th>Deletes</th>
    </tr>
     {% for i in data %}
 
@@ -30,9 +32,12 @@ $(document).ready(function() {
        <td>{{i.Phone_no}}</td>
        <td>{{i.Email}}</td>
        <td>{{i.Company}}</td>
-   </tr>
- {% endfor %}
+       <td><a href = "/TD/showUpdate?name={{i.Username}}" >Edit</a></td>
+       <td><a href = "/TD/showDelete?name={{i.Username}}" >Delete</a></td>
+ 
 
+ </tr>
+{% endfor %}
 
 </table>
 </body>

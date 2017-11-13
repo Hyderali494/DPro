@@ -2,26 +2,29 @@
 
 <head>
 <link  rel = "stylesheet" href = "dashboard.css" type = 'text/css'/>
+<link rel = "stylesheet" href ="/static/bootstrap/bootstrap-4.0.0-beta-dist/css/bootstrap.min.css" type = 'text/css'/>
+
 <style>
 a {
 display:block;
-color:black;
-text-align:center;
-float:left;
 font-size:30px;
-padding:20px;
-background-color:brown;
 text-decoration:none;
-margin:150px;
+padding : 20px;
+margin : 200px;
 }
 
 </style>
 
 </head>
 <body style ='background-color:skyblue'>
-<h1 style="text-align:center">Dashboard</h1>
-<a href = "/TD/showContact/" class = 'btn btn-primary'>Add a Contact</a>
-<a href = "/TD/dispContacts/" class = 'btn btn-primary'>Show Contacts</a>
+<div class = "container">
+  <div class = 'btn-group btn-group-justified'>
+    <a href = "/TD/showContact/" class = 'btn btn-primary'>Add a Contact</a>
+    <a href = "/TD/dispContacts/" class = 'btn btn-primary'>Show Contacts</a>
+    <a href = "#/TD/showUpdate/" class = 'btn btn-primary'>Update Contact</a>
+    <a href = "#/TD/showDelete/" class = 'btn btn-primary'>Delete Contact</a>
+  </div>
+</div>
 </body>
 
 
